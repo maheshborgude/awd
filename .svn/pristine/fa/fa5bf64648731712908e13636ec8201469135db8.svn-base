@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+<test name="TC_AutoLogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPopUpViewNR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpViewNR"/>
+		</classes>
+	</test>
+	
+	<!-- - 
+	<test name="TC_PracticeLocationPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpViewNR" />
+		</classes>
+	</test>
+	<test name="TC_PracticeAllLocationPopUpViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpViewR" />
+		</classes>
+	</test>
+<test name="TC_PracticeMeasureCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeMeasureCountR" />
+		</classes>
+	</test>
+		
+	<test name="TC_Verifywelcomepage">
+		<classes>
+			<class name="testcases.pro.clinicianportal.TC_Verifywelcomepage" />
+		</classes>
+	</test>
+	
+	-->
+	</suite>

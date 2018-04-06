@@ -1,0 +1,17 @@
+Driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+##APA Registry
+#ConncetinString=jdbc:sqlserver://10.20.201.90
+#UserName=mapping
+#Password=mp3245
+#WebDatabase=APA_FIGMDWeb
+#ManagementDatabase=APAFIGMDHQIManagement
+#CDRDatabase=APAFIGMDHQIDummyCDR
+
+ConncetinString=jdbc:sqlserver://10.20.201.116
+UserName=mapping
+Password=mp3245
+WebDatabase=FIGMDWeb
+ManagementDatabase=FIGMDHQIManagement
+CDRDatabase=FIGMDHQIDemoCDR_01
+

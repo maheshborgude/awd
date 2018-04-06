@@ -1,0 +1,3 @@
+<h2>Groups used for this test run</h2><table border="1">
+<tr> <td align="center"><b>Group name</b></td><td align="center"><b>Methods</b></td></tr><tr><td>LoginGroup</td><td>TC_DefaultLogin.testBlankPassword(java.util.Hashtable)[pri:0, instance:testcases.login.TC_DefaultLogin@4bb33f74]<br/></td></tr>
+</table>

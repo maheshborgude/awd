@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="loginSuite">
+	<test name="TC_AutoLogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+
+
+<test name="TC_PracticeAllLocationPopUpCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllLocationPopUpViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllPerformanceTrendViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllPerformanceTrendViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllProvidersMeasureComputationSummaryViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersMeasureComputationSummaryViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllProvidersPatientDrillDownCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPatientDrillDownCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllProvidersPatientDrillDownPaginationR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPatientDrillDownPaginationR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllProvidersPatientDrillDownSortR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPatientDrillDownSortR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllProvidersPatientDrillDownViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPatientDrillDownViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllProvidersPopUpCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeAllProvidersPopUpViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeFavoritesMeasureCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeFavoritesMeasureCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeFavoritesMeasureViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeFavoritesMeasureViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeMeasureCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeMeasureCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeMeasureViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeMeasureViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationMeasureComputationSummaryViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationMeasureComputationSummaryViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPatientDrillDownCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationPatientDrillDownCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPatientDrillDownPaginationR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationPatientDrillDownPaginationR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPatientDrillDownSortR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationPatientDrillDownSortR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPatientDrillDownViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationPatientDrillDownViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPopUpCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationPopUpCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPopUpPaginationR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationPopUpPaginationR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeLocationPopUpViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeLocationPopUpViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeMeasureComputationSummaryViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeMeasureComputationSummaryViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticePerformanceTrendPatientDrillDownCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticePerformanceTrendPatientDrillDownCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticePerformanceTrendPatientDrillDownPaginationR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticePerformanceTrendPatientDrillDownPaginationR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticePerformanceTrendPatientDrillDownSortR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticePerformanceTrendPatientDrillDownSortR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticePerformanceTrendPatientDrillDownViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticePerformanceTrendPatientDrillDownViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeProvidersMeasureComputationSummaryViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeProvidersMeasureComputationSummaryViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeProvidersPatientDrillDownCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeProvidersPatientDrillDownCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeProvidersPatientDrillDownPaginationR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeProvidersPatientDrillDownPaginationR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeProvidersPatientDrillDownSortR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeProvidersPatientDrillDownSortR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeProvidersPatientDrillDownViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeProvidersPatientDrillDownViewR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeProvidersPopUpCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeProvidersPopUpCountR"/>
+		</classes>
+	</test>
+	<test name="TC_PracticeProvidersPopUpViewR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeProvidersPopUpViewR"/>
+		</classes>
+	</test>
+	</suite>
+

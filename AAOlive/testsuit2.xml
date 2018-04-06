@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+	<test name="TC_Defaultlogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeAllProvidersPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR" />
+		</classes>
+	</test>
+	
+	
+	
+	<!--
+
+
+
+
+
+	<test name="TC_PracticeAllProvidersPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR" />
+		</classes>
+	</test>
+	
+
+
+	<test name="TC_PracticeLocationPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpViewNR" />
+		</classes>
+	</test>
+
+
+
+
+	<test name="TC_PracticeAllLocationPopUpViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpViewR" />
+		</classes>
+	</test>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		##########################################################################################################
+	   WORKIN Test cases
+	   	<test name="TC_PracticeLocationPopUpViewNR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpViewNR"/>
+		</classes>
+	</test>
+	
+	   	 		<test name="TC_PracticeAllLocationPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllLocationPopUpViewNR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeAllLocationPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllLocationPopUpCountNR" />
+		</classes>
+	</test>
+		<test name="TC_PracticeAllLocationPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpCountR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeAllProvidersPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpCountR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeAllProvidersPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpCountNR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeLocationPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeLocationPopUpCountR" />
+		</classes>
+	</test>
+				
+<test name="TC_PracticeLocationPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpCountNR" />
+		</classes>
+	</test>
+	
+#################################################################################################################
+	<test name="TC_LocationPagination">
+		<classes> 
+	<class name="testcases.administration.location.TC_LocationPagination" />
+		</classes>
+	</test>
+	<test name="TC_SearchLocation">
+		<classes>
+			<class name="testcases.administration.location.TC_SearchLocation" />
+		</classes>
+	</test>
+
+	<test name="TC_ProviderPagination">
+		<classes>
+			<class name="testcases.administration.provider.TC_ProviderPagination" />
+		</classes>
+	</test>
+<test name="TC_SearchProviderTable">
+		<classes>
+			<class name="testcases.administration.provider.TC_SearchProviderTable" />
+		</classes>
+	</test>
+
+<test name="TC_AssociatedUsersPagination">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AssociatedUsersPagination" />
+		</classes>
+	</test>
+	<test name="TC_AssociatedUsersSearch">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AssociatedUsersSearch" />
+		</classes>
+	</test>
+<test name="TC_AssociatedUsersSort">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AssociatedUsersSort" />
+		</classes>
+	</test>
+	<test name="TC_AuthorizedUsersGroupsPagination">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AuthorizedUsersGroupsPagination" />
+		</classes>
+	</test>
+<test name="TC_AuthorizedUsersGroupsSearch">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AuthorizedUsersGroupsSearch" />
+		</classes>
+	</test>
+	<test name="TC_AuthorizedUsersGroupsSort">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AuthorizedUsersGroupsSort" />
+		</classes>
+	</test>
+<test name="TC_SearchUser">
+		<classes>
+			<class name="testcases.administration.usermanagement.TC_SearchUser" />
+		</classes>
+	</test>
+	<test name="TC_SortUser">
+		<classes>
+			<class name="testcases.administration.usermanagement.TC_SortUser" />
+		</classes>
+	</test>
+
+	
+	
+
+	
+
+	
+	#############################################
+	
+	##dashboard practice#####
+		<test name="TC_PracticeAllLocationPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllLocationPopUpCountNR" />
+		</classes>
+	</test>
+		<test name="TC_PracticeAllLocationPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpCountR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeAllProvidersPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpCountR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeAllProvidersPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpCountNR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeLocationPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeLocationPopUpCountR" />
+		</classes>
+	</test>
+				
+<test name="TC_PracticeLocationPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpCountNR" />
+		</classes>
+	</test>
+	
+	<test name="TC_SortLocations">
+		<classes>
+			<class name="testcases.administration.location.TC_SortLocations" />
+		</classes>
+	</test>
+		<test name="TC_SortProviderTable">
+		<classes>
+			<class name="testcases.administration.provider.TC_SortProviderTable" />
+		</classes>
+	</test>
+	
+	
+	
+	
+	 ############################################
+	 
+	 		<test name="TC_PracticeAllLocationPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllLocationPopUpViewNR" />
+		</classes>
+	</test>
+	
+
+	 
+	
+	<test name="TC_PracticeAllLocationPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllLocationPopUpViewNR" />
+		</classes>
+	</test>
+	
+
+
+	<test name="TC_PracticeAllProvidersPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR" />
+		</classes>
+	</test>
+	
+
+
+	<test name="TC_PracticeLocationPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpViewNR" />
+		</classes>
+	</test>
+
+
+
+
+	<test name="TC_PracticeAllLocationPopUpViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpViewR" />
+		</classes>
+	</test>
+	
+	 ############################################Test cases for administration: 
+	<test name="TC_LocationPagination">
+		<classes> 
+	<class name="testcases.administration.location.TC_LocationPagination" />
+		</classes>
+	</test>
+	<test name="TC_SearchLocation">
+		<classes>
+			<class name="testcases.administration.location.TC_SearchLocation" />
+		</classes>
+	</test>
+<test name="TC_SortLocations">
+		<classes>
+			<class name="testcases.administration.location.TC_SortLocations" />
+		</classes>
+	</test>
+	<test name="TC_ProviderPagination">
+		<classes>
+			<class name="testcases.administration.provider.TC_ProviderPagination" />
+		</classes>
+	</test>
+<test name="TC_SearchProviderTable">
+		<classes>
+			<class name="testcases.administration.provider.TC_SearchProviderTable" />
+		</classes>
+	</test>
+	<test name="TC_SortProviderTable">
+		<classes>
+			<class name="testcases.administration.provider.TC_SortProviderTable" />
+		</classes>
+	</test>
+<test name="TC_AssociatedUsersPagination">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AssociatedUsersPagination" />
+		</classes>
+	</test>
+	<test name="TC_AssociatedUsersSearch">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AssociatedUsersSearch" />
+		</classes>
+	</test>
+<test name="TC_AssociatedUsersSort">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AssociatedUsersSort" />
+		</classes>
+	</test>
+	<test name="TC_AuthorizedUsersGroupsPagination">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AuthorizedUsersGroupsPagination" />
+		</classes>
+	</test>
+<test name="TC_AuthorizedUsersGroupsSearch">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AuthorizedUsersGroupsSearch" />
+		</classes>
+	</test>
+	<test name="TC_AuthorizedUsersGroupsSort">
+		<classes>
+			<class name="testcases.administration.groupmanagement.TC_AuthorizedUsersGroupsSort" />
+		</classes>
+	</test>
+<test name="TC_SearchUser">
+		<classes>
+			<class name="testcases.administration.usermanagement.TC_SearchUser" />
+		</classes>
+	</test>
+	<test name="TC_SortUser">
+		<classes>
+			<class name="testcases.administration.usermanagement.TC_SortUser" />
+		</classes>
+	</test>
+	
+	
+	 -->
+</suite>
+
+

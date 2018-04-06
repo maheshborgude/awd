@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Login" duration-ms="57614" started-at="2017-11-27T13:52:29Z" finished-at="2017-11-27T13:53:27Z">
+    <groups>
+      <group name="LoginGroup">
+        <method signature="TC_DefaultLogin.testBlankPassword(java.util.Hashtable)[pri:0, instance:testcases.login.TC_DefaultLogin@4bb33f74]" name="testBlankPassword" class="testcases.login.TC_DefaultLogin"/>
+      </group> <!-- LoginGroup -->
+    </groups>
+    <test name="TC_Defaultlogin" duration-ms="19147" started-at="2017-11-27T13:52:29Z" finished-at="2017-11-27T13:52:49Z">
+      <class name="testcases.login.TC_DefaultLogin">
+        <test-method status="PASS" signature="testBlankPassword(java.util.Hashtable)[pri:0, instance:testcases.login.TC_DefaultLogin@4bb33f74]" name="testBlankPassword" duration-ms="18062" started-at="2017-11-27T19:22:31Z" data-provider="TC_AutoLogin" finished-at="2017-11-27T19:22:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{start_in=, login_pass=**********, login_user=practice.admin}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBlankPassword -->
+      </class> <!-- testcases.login.TC_DefaultLogin -->
+    </test> <!-- TC_Defaultlogin -->
+    <test name="TC_PracticeAllProvidersPopUpViewNR" duration-ms="38401" started-at="2017-11-27T13:52:49Z" finished-at="2017-11-27T13:53:27Z">
+      <class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR@fa49800]" name="setup" is-config="true" duration-ms="11574" started-at="2017-11-27T19:22:18Z" finished-at="2017-11-27T19:22:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC_AllMeasures(java.util.Hashtable)[pri:0, instance:testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR@fa49800]" name="TC_AllMeasures" duration-ms="37189" started-at="2017-11-27T19:22:50Z" data-provider="PracticeAllProvidersPopUpViewNR" finished-at="2017-11-27T19:23:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Menu=Dashboards, SubMenu=practice, QuarterMonth=2014Q2}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_AllMeasures -->
+        <test-method status="PASS" signature="trans_report()[pri:0, instance:testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR@fa49800]" name="trans_report" is-config="true" duration-ms="17397" started-at="2017-11-27T19:23:27Z" finished-at="2017-11-27T19:23:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- trans_report -->
+      </class> <!-- testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR -->
+    </test> <!-- TC_PracticeAllProvidersPopUpViewNR -->
+  </suite> <!-- Login -->
+</testng-results>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Login]">
+  <test name="TC_ProviderMeasureComputationSummaryNR(failed)">
+    <classes>
+      <class name="testcases.dashboard.provider.nonrolling.TC_ProviderMeasureComputationSummaryNR">
+        <methods>
+          <include name="startTestCase" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testcases.dashboard.provider.nonrolling.TC_ProviderMeasureComputationSummaryNR -->
+      <class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore">
+        <methods>
+          <include name="trans_report"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore -->
+    </classes>
+  </test> <!-- TC_ProviderMeasureComputationSummaryNR(failed) -->
+  <test name="TC_PracticeFavoritesMeasureViewR(failed)">
+    <classes>
+      <class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureViewR">
+        <methods>
+          <include name="test" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureViewR -->
+      <class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore">
+        <methods>
+          <include name="trans_report"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore -->
+    </classes>
+  </test> <!-- TC_PracticeFavoritesMeasureViewR(failed) -->
+  <test name="TC_PracticeMeasuresWithHigherScore(failed)">
+    <classes>
+      <class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore">
+        <methods>
+          <include name="test" invocation-numbers="0"/>
+          <include name="trans_report"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore -->
+    </classes>
+  </test> <!-- TC_PracticeMeasuresWithHigherScore(failed) -->
+</suite> <!-- Failed suite [Login] -->

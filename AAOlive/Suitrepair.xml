@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+<test name="TC_AutoLogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+	
+<test name="TC_ProviderMeasureComputationSummaryNR"> 
+		<classes> 
+			<class name="testcases.dashboard.provider.nonrolling.TC_ProviderMeasureComputationSummaryNR" /> 
+		</classes> 
+	</test> 
+	
+	
+	
+	
+		<test name="TC_PracticeFavoritesMeasureViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureViewR" />
+		</classes>
+	</test>
+	
+		<test name="TC_PracticeMeasuresWithHigherScore">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore" />
+		</classes>
+	</test>
+	
+	
+ 	
+ 	
+	</suite>

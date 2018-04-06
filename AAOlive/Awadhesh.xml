@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+  <test name="TC_Defaultlogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+		
+	<test name="TC_ProviderBubbleCountNR"> 
+		<classes> 
+			<class name="testcases.dashboard.provider.nonrolling.TC_ProviderBubbleCountNR" /> 
+		</classes> 
+	</test>
+	
+		
+	<test name="TC_ProviderBubbleCountR"> 
+		<classes> 
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderBubbleCountR" /> 
+		</classes> 
+	</test>
+	
+<!--  <test name="TC_PracticeAllProvidersPopUpViewNR"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!--  	<test name="TC_PracticeAllProvidersPopUpViewR"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpViewR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+					
+<!-- <test name="TC_PracticeLocationPopUpCountNR"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpCountNR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 		  <test name="TC_PracticeLocationPopUpCountR"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.rolling.TC_PracticeLocationPopUpCountR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test name="TC_PracticeAllProvidersPopUpCountR"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpCountR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<!-- 		<test name="TC_PracticeAllProvidersPopUpCountNR"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpCountNR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 		<test name="PracticePerformanceTrendPatientDrillDownCountR"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.rolling.TC_PracticePerformanceTrendPatientDrillDownCountR" /> -->
+<!-- 		</classes>  -->
+<!-- 	</test>		 -->
+		
+<!-- 		<test name="PracticePerformancrTrendPatientDrillDownCountNR"> -->
+	
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.dashboard.practice.nonRolling.TC_PracticePerformanceTrendPatientDrillDownCountNR" /> -->
+<!-- 		</classes>  -->
+<!-- 	</test> -->
+
+<!-- 	<test name="TC_LocationBubbleCountNR"> -->
+<!-- 		<classes>  -->
+<!-- 	<class name="testcases.dashboard.location.locationList.nonRolling.TC_LocationBubbleCountNR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	<test name="TC_LocationCountNR">
+		<classes> 
+	<class name="testcases.dashboard.location.locationList.nonRolling.TC_LocationCountNR" />
+		</classes>
+	</test>
+	
+<!-- 	<test name="TC_LocationBubbleCountR"> -->
+<!-- 		<classes>  -->
+<!-- 	<class name="testcases.dashboard.location.locationList.rolling.TC_LocationBubbleCountR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 		<test name="TC_LocationCountR"> -->
+<!-- 		<classes>  -->
+<!-- 	<class name="testcases.dashboard.location.locationList.rolling.TC_LocationCountR" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+	
+	
+	
+	</suite>			
+	
+	

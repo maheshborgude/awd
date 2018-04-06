@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+	
+	<test name="TC_Defaultlogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+	
+<test name="TC_ProviderPatientDrillDownCountR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderPatientDrillDownCountR" />
+		</classes>
+	</test>
+	
+			<test name="TC_ProviderPatientDrillDownCountNR">
+		<classes>
+			<class name="testcases.dashboard.provider.nonrolling.TC_ProviderPatientDrillDownCountNR" />
+		</classes>
+	</test>
+		<test name="TC_VerifyPracticeMeasureGridR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_VerifyPracticeMeasureGridR" />
+		</classes>
+	</test>
+	
+	
+	<test name="TC_ProviderMeasureViewR"> 
+		<classes> 
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderMeasureViewR" /> 
+		</classes> 
+	</test>
+	
+		
+	<test name="TC_ProviderBubbleCountNR"> 
+		<classes> 
+			<class name="testcases.dashboard.provider.nonrolling.TC_ProviderBubbleCountNR" /> 
+		</classes> 
+	</test>
+	
+		
+	<test name="TC_ProviderBubbleCountR"> 
+		<classes> 
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderBubbleCountR" /> 
+		</classes> 
+	</test>
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+</suite>

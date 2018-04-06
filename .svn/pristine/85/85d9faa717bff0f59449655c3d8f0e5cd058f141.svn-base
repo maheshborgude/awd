@@ -1,0 +1,4 @@
+<h2>Groups used for this test run</h2><table border="1">
+<tr> <td align="center"><b>Group name</b></td><td align="center"><b>Methods</b></td></tr><tr><td>LoginGroup</td><td>TC_DefaultLogin.testBlankPassword(java.util.Hashtable)[pri:0, instance:testcases.login.TC_DefaultLogin@65c7a252]<br/></td></tr>
+<tr><td>MeasureGrid</td><td>TC_PracticeMeasuresWithHigherScore.test(java.util.Hashtable)[pri:0, instance:testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore@6892b3b6]<br/>TC_PracticeFavoritesMeasureViewR.test(java.util.Hashtable)[pri:0, instance:testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureViewR@644baf4a]<br/></td></tr>
+</table>

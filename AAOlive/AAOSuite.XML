@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AAOTestSuite">
+
+	<test name="TC_Defaultlogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+	<!-- 
+	<test name="TC_DetailedPPDrillDownCountR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_DetailedPPDrillDownCountR" />
+		</classes>
+	</test>
+     -->
+	
+		
+<!-- Test cases of Dashboard >> PracticeMeasureGrid >> LandingPage -->
+
+	<test name="TC_VerifyPracticeMeasureGridR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_VerifyPracticeMeasureGridR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeMeasureViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasureViewNR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeMeasureCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasureCountR" />
+		</classes>
+	</test>
+	
+		<test name="TC_PracticeMeasureCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasureCountNR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeFavoritesMeasureViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureViewR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeFavoritesMeasureViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureViewNR" />
+		</classes>
+	</test>
+	<test name="TC_PracticeFavoritesMeasureCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureCountR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeFavoritesMeasureCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeFavoritesMeasureCountNR" />
+		</classes>
+	</test>
+
+		<test name="TC_PracticeMeasuresWithHigherScore">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithHigherScore" />
+		</classes>
+	</test>
+	
+	<test name="TC_PMCountOfHigherScore">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PMCountOfHigherScore" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeMeasuresWithLowerScore">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PracticeMeasuresWithLowerScore" />
+		</classes>
+	</test>
+	
+	<test name="TC_PMCountOfLowerScore">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_PMCountOfLowerScore" />
+		</classes>
+	</test>
+	
+	<test name="TC_VerifyLastUpdatedDate">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceMeasureGrid.TC_VerifyLastUpdatedDate" />
+		</classes>
+	</test>
+	
+	<!--  Test cases for Dashboard >> Provider
+	
+	<test name="TC_ProviderCountR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderCountR" />
+		</classes>
+	</test>
+
+	<test name="TC_ProviderMeasureViewR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderMeasureViewR" />
+		</classes>
+	</test>
+	
+		<test name="TC_ProviderMeasureComputationSummaryR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderMeasureComputationSummaryR" />
+		</classes>
+	</test>
+	
+		<test name="TC_ProviderPatientDrillDownSortR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderPatientDrillDownSortR" />
+		</classes>
+	</test>
+	
+	<test name="TC_ProviderPatientDrillDownR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderPatientDrillDownR" />
+		</classes>
+	</test>
+	
+	<test name="TC_ProviderPatientDrillDownCountR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderPatientDrillDownCountR" />
+		</classes>
+	</test>
+		
+-->
+
+<!-- Testcases added by Ashwini
+<test name="TC_PracticeProviderPopUpView">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProviderPopUpViewR" />
+		</classes>
+</test>	 
+
+ 
+<test name="TC_PracticeProviderPT_TableViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProviderPT_TableViewR" />
+		</classes>
+	</test>
+   
+	<test name="TC_PracticeProvidersPatientDrillDownCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProvidersPatientDrillDownCountR" />
+		</classes>
+	</test> 
+
+
+	<test name="TC_PracticeProvidersPatientDrillDownViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProvidersPatientDrillDownViewR" />
+		</classes>
+	</test>
+	
+-->
+
+<!-- Test cases added by Dashboard >> PraticeMeasureGrid >> All Pop-up --> 
+
+ <test name="TC_PracticeAllProvidersPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR" />
+		</classes>
+	</test>
+	
+ 	<test name="TC_PracticeAllProvidersPopUpViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpViewR" />
+		</classes>
+	</test>
+					
+<test name="TC_PracticeLocationPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpCountNR" />
+		</classes>
+	</test>
+		  <test name="TC_PracticeLocationPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeLocationPopUpCountR" />
+		</classes>
+	</test>
+	
+	<test name="TC_PracticeAllProvidersPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticeAllProvidersPopUpCountR" />
+		</classes>
+	</test>
+		<test name="TC_PracticeAllProvidersPopUpCountNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpCountNR" />
+		</classes>
+	</test>
+		<test name="PracticePerformanceTrendPatientDrillDownCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.rolling.TC_PracticePerformanceTrendPatientDrillDownCountR" />
+		</classes> 
+	</test>		
+		
+		<test name="PracticePerformancrTrendPatientDrillDownCountNR">
+	
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticePerformanceTrendPatientDrillDownCountNR" />
+		</classes> 
+	</test>
+
+	<test name="TC_LocationBubbleCountNR">
+		<classes> 
+	<class name="testcases.dashboard.location.locationList.nonRolling.TC_LocationBubbleCountNR" />
+		</classes>
+	</test>
+	<test name="TC_LocationCountNR">
+		<classes> 
+	<class name="testcases.dashboard.location.locationList.nonRolling.TC_LocationCountNR" />
+		</classes>
+	</test>
+	
+	<test name="TC_LocationBubbleCountR">
+		<classes> 
+	<class name="testcases.dashboard.location.locationList.rolling.TC_LocationBubbleCountR" />
+		</classes>
+	</test>
+		<test name="TC_LocationCountR">
+		<classes> 
+	<class name="testcases.dashboard.location.locationList.rolling.TC_LocationCountR" />
+		</classes>
+	</test>
+
+<test name="TC_ProviderCountNR">
+		<classes>
+			<class name="testcases.dashboard.provider.nonrolling.TC_ProviderCountNR" />
+		</classes> 
+	</test>
+		<test name="TC_ProviderCountR">
+		<classes>
+			<class name="testcases.dashboard.provider.rolling.TC_ProviderCountR" />
+		</classes> 
+	</test> 
+	
+	</suite>

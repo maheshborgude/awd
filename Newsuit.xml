@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+<test name="TC_AutoLogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+	<test name="PracticeLocationPopUpViewNR">
+		<classes>
+			<class name="testcases.dashboard.practice.nonRolling.TC_PracticeLocationPopUpViewNR" />
+		</classes> 
+	</test>
+	</suite>

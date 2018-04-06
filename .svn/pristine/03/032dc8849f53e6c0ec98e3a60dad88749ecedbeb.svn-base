@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Login]">
+  <test name="TC_Defaultlogin">
+    <classes>
+      <class name="testcases.login.TC_DefaultLogin"/>
+    </classes>
+  </test> <!-- TC_Defaultlogin -->
+  <test name="TC_PracticeAllProvidersPopUpViewNR">
+    <classes>
+      <class name="testcases.dashboard.practice.nonRolling.TC_PracticeAllProvidersPopUpViewNR"/>
+    </classes>
+  </test> <!-- TC_PracticeAllProvidersPopUpViewNR -->
+</suite> <!-- Failed suite [Login] -->

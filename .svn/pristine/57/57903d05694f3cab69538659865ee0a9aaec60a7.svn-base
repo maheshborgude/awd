@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+	<test name="TC_Defaultlogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+	
+<!--
+	<test name="TC_PracticeProvidersPopUpCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProvidersPopUpCountR" />
+		</classes>
+	</test>
+  -->
+ <!--  
+<test name="TC_PracticeProviderPopUpView">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProviderPopUpViewR" />
+		</classes>
+</test>	 
+-->  
+<!--  
+<test name="TC_PracticeProviderPT_TableViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProviderPT_TableViewR" />
+		</classes>
+	</test>
+-->
+   
+	<test name="TC_PracticeProvidersPatientDrillDownCountR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProvidersPatientDrillDownCountR" />
+		</classes>
+	</test> 
+
+  <!-- 
+	<test name="TC_PracticeProvidersPatientDrillDownViewR">
+		<classes>
+			<class name="testcases.dashboard.practice.practiceProvider.rolling.TC_PracticeProvidersPatientDrillDownViewR" />
+		</classes>
+	</test> 
+ -->
+
+</suite>
+
+

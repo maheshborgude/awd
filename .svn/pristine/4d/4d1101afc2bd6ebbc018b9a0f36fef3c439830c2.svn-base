@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="loginSuite">
+	<test name="TC_AutoLogin">
+		<classes>
+			<class name="testcases.login.TC_DefaultLogin" />
+		</classes>
+	</test>
+		<test name="TC_LocationPagination">
+		<classes> 
+	<class name="testcases.administration.location.TC_LocationPagination" />
+		</classes>
+	</test>
+	
+	
+	
+	<!-- 
+	<test name="TC_LocationPagination">
+		<classes> 
+	<class name="testcases.administration.location.TC_LocationPagination" />
+		</classes>
+	</test>
+		<test name="TC_Mipsprovider">
+		<classes>
+			<class name="testcases.mips.TC_Verfiymipsprovidergrid" />
+		</classes>
+	</test>
+			<test name="TC_Mipsprovider">
+		<classes>
+			<class name="testcases.mips.TC_MipsProviderCountSearch" />
+		</classes>
+	</test>
+	
+	
+	
+	
+	
+	
+	<test name="TC_PracticeAllLocationPopUpCountR">
+		<classes>
+			<class
+					name="testcases.dashboard.practice.rolling.TC_PracticeAllLocationPopUpCountR"/>
+		</classes>
+	</test>
+	
+		
+	
+	<test name="TC_MipsProviderlist">
+		<classes>
+			<class name="testcases.mips.TC_MipsProviderlist" />
+		</classes>
+	</test>
+		<test name="TC_Mipsprovider">
+		<classes>
+			<class name="testcases.mips.TC_Verfiymipsprovidergrid" />
+		</classes>
+	</test>
+	
+	<test name="TC_Verifywelcomepage">
+		<classes>
+			<class name="testcases.pro.clinicianportal.TC_Verifywelcomepage" />
+			</classes>
+	</test>
+	
+	
+	<test name="TC_Addnewpatient">
+		<classes>
+			<class name="testcases.pro.clinicianportal.TC_Addnewpatient" />
+		</classes>
+	</test>
+
+	- -->
+	</suite>

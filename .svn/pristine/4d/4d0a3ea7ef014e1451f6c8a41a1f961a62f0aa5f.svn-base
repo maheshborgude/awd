@@ -1,0 +1,454 @@
+###Dashboard >> PracticeMeasureGrid >> LandingPage
+
+PracticeMeasureCountWithHighLowScores = select Count(distinct MeasureId) as totalcount \
+from [FIGMDWeb].[dbo].[ViewMeasureComputationSummary]  \
+where PracticeUid IN (select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth' and Flag = '@flag' \
+and ProviderUid is null and LocationUid is null and MeasureType='0' and IsDownwardTrending='@score' 
+
+
+LastUpdatedDate = Select top 1 CONVERT(VARCHAR, P.EndTime, 101) + ' ' + \
+CONVERT(VARCHAR, DATEPART(hh, P.EndTime)) + ':' + \
+RIGHT('0' + CONVERT(VARCHAR, DATEPART(mi, P.EndTime)), 2) AS Date,P.QuarterEndDate from [FIGMDWeb].[dbo].[PracticeRefreshStatus] P \
+where PracticeUid IN(select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i on \
+f.Figuseruid = i.individualuid where loginname ='@loginuser') and P.Flag='@flag' and \
+P.QuarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth')\
+order by  P.Endtime desc
+
+
+PracticeMeasureHighLowScore = select (DisplayName + '' +MeasureId) as ID, \
+Replace(ShortDescription,' ','') as Measure, \
+'RegistryAverage:'+CAST(CONVERT(DECIMAL(10,2),NationalAverage*100 ) AS varchar)+'%' as RegistryAverage, \
+CAST(CONVERT(DECIMAL(10,2),Average*100) AS varchar)+'%' as Performance, ListOrder \
+from [FIGMDWeb].[dbo].[ViewMeasureComputationSummary]  \
+where PracticeUid IN (select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth' and Flag = '@flag' \
+and ProviderUid is null and LocationUid is null and MeasureType='0' and IsDownwardTrending='@score' \
+order by ListOrder 
+
+
+PFMCountR = select distinct Count(Measure) as totalcount \
+from [FIGMDWeb].dbo.ViewMeasureComputationSummary v \
+inner join [FIGMDWeb].dbo.FIGUserFavorite f on f.Value = v.NationalProgramQualityMeasureUid \
+where PracticeUid IN \
+(select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth' and Flag = '@flag' \
+and ProviderUid is null and LocationUid is null AND f.FIGUserUid in(select FIGUserUid from [FIGMDHQIManagement].dbo.FIGUser where loginname ='@loginuser') \
+AND f.PageName = 'MEASURE'
+
+
+PFMViewNR = select (DisplayName + '' +MeasureId) as ID, \
+Replace(ShortDescription,' ','') as Measure,\
+'RegistryAverage:'+CAST(CONVERT(DECIMAL(10,2),NationalAverage*100 ) AS varchar)+'%' as RegistryAverage, \
+CAST(CONVERT(DECIMAL(10,2),Average*100) AS varchar)+'%' as Performance, ListOrder \
+from [FIGMDWeb].dbo.ViewMeasureComputationSummary v \
+inner join [FIGMDWeb].dbo.FIGUserFavorite f on f.Value = v.NationalProgramQualityMeasureUid \
+where PracticeUid IN \
+(select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth'  and Flag = '@flag' \
+and ProviderUid is null and LocationUid is null AND f.FIGUserUid in(select FIGUserUid from [FIGMDHQIManagement].dbo.FIGUser where loginname ='@loginuser') \
+AND f.PageName = 'MEASURE' \
+order by ListOrder
+
+
+PFMViewR = select (DisplayName + '' +MeasureId) as ID, \
+Replace(ShortDescription,' ','') as Measure,\
+'RegistryAverage:'+CAST(CONVERT(DECIMAL(10,2),NationalAverage*100 ) AS varchar)+'%' as RegistryAverage, \
+CAST(CONVERT(DECIMAL(10,2),Average*100) AS varchar)+'%' as Performance, ListOrder \
+from [FIGMDWeb].dbo.ViewMeasureComputationSummary v \
+inner join [FIGMDWeb].dbo.FIGUserFavorite f on f.Value = v.NationalProgramQualityMeasureUid \
+where PracticeUid IN \
+(select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth'  and Flag = '@flag' \
+and ProviderUid is null and LocationUid is null AND f.FIGUserUid in(select FIGUserUid from [FIGMDHQIManagement].dbo.FIGUser where loginname ='@loginuser') \
+AND f.PageName = 'MEASURE' \
+order by ListOrder
+
+
+PracticeAllMeasureCountR = select distinct COUNT(MeasureId) as Count from [FIGMDWeb].[dbo].[ViewMeasureComputationSummary] \
+where PracticeUid IN (select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth' and Flag = '@flag' \
+and ProviderUid is null and LocationUid is null and MeasureType='0'
+
+
+PracticeMeasureGridR = select distinct (DisplayName + '' +MeasureId) as ID, Replace(ShortDescription,' ','') as Measure, \
+CAST(CONVERT(DECIMAL(10,2),Average*100) AS varchar)+'%' as Performance,\
+'RegistryAverage:'+CAST(CONVERT(DECIMAL(10,2),NationalAverage*100 ) AS varchar)+'%' as RegistryAverage, ListOrder \
+from [FIGMDWeb].[dbo].[ViewMeasureComputationSummary] \
+where PracticeUid IN (select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth' and Flag = '@flag' and ProviderUid is null and LocationUid is null and MeasureType='0'\
+order by ListOrder
+
+
+###Dashboard >> PracticeMeasureGrid >> Pop-up
+
+PracticeAllProvidersPopUpViewNR=select distinct top 15 Name as ProviderName, \
+isNull(Denominator,0) as Qualified, \
+isNull(Numerator,0) as Met, \
+isNull(NotMet,0) as NotMet, \
+CAST(CONVERT(DECIMAL(10,2),isnull(Average,0)*100) AS varchar)+'%' as Performance, \
+'Registry Average: '+CAST(CONVERT(DECIMAL(10,2),isnull(NationalAverage,0)*100 ) AS varchar)+'%' as RegistryBenchmark  \
+from [FIGMDHQIManagement].[dbo].Viewserviceprovider vf \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary  msc on vf.ServiceProviderUid=msc.Provideruid and msc.QuarterName='@quartermonth' and flag='@flag' \
+and msc.provideruid is not null and locationuid is  null \
+and msc.NationalProgramQualityMeasureUid='@measureid' \
+left join [FIGMDHQIManagement].[dbo].FIGUserAuthorization fa \
+on fa.ObjectUid = vf.ServiceProviderUid and type in ('1','3') and \
+OBJECtname = 'provider' AND fa.figuseruid \
+IN(SELECT figuseruid FROM [FIGMDHQIManagement].[dbo].figuser WHERE loginname = '@loginuser') \
+where  vf.PracticeUid IN (select PracticeUid from [FIGMDHQIManagement].[dbo].Figuser f inner join [FIGMDHQIManagement].[dbo].individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and vf.inactive=0 \
+order by name
+
+
+PracticeAllProvidersPopUpViewR=select distinct top 15 Name as ProviderName, \
+isNull(Denominator,0) as Qualified, \
+isNull(Numerator,0) as Met, \
+isNull(NotMet,0) as NotMet, \
+CAST(CONVERT(DECIMAL(10,2),isnull(Average,0)*100) AS varchar)+'%' as Performance, \
+'Registry Average: '+CAST(CONVERT(DECIMAL(10,2),isnull(NationalAverage,0)*100 ) AS varchar)+'%' as RegistryBenchmark  \
+from [FIGMDHQIManagement].[dbo].Viewserviceprovider vf \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary  msc on vf.ServiceProviderUid=msc.Provideruid and msc.QuarterName='@quartermonth' and flag='@flag' \
+and msc.provideruid is not null and locationuid is  null \
+and msc.NationalProgramQualityMeasureUid='@measureid' \
+left join [FIGMDHQIManagement].[dbo].FIGUserAuthorization fa \
+on fa.ObjectUid = vf.ServiceProviderUid and type in ('1','3') and \
+OBJECtname = 'provider' AND fa.figuseruid \
+IN(SELECT figuseruid FROM [FIGMDHQIManagement].[dbo].figuser WHERE loginname = '@loginuser') \
+where  vf.PracticeUid IN (select PracticeUid from [FIGMDHQIManagement].[dbo].Figuser f inner join [FIGMDHQIManagement].[dbo].individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and vf.inactive=0 \
+order by name
+
+
+PracticeLocationPopUpCountNR=Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility where  \
+servicelocationuid in ( \
+select distinct ServiceLocationUid \
+from [FIGMDWeb].[dbo].viewservicelocation vsl \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary vmcs on vsl.PracticeUid=vmcs.PracticeUid \
+where vmcs.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and QuarterName='@quartermonth' and flag='@flag' \
+and locationuid is  not null and provideruid is  null \
+and NationalProgramQualityMeasureUid='@measureID' and inactive = '0')
+
+
+
+PracticeLocationPopUpCountR= Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility vf \
+left join [FIGMDWeb].[dbo].ViewMeasureComputationSummary  msc \
+on vf.ServiceLocationUid=msc.locationuid and msc.QuarterName= '@quartermonth' and flag='@flag' \
+and msc.locationuid is  not null and provideruid is  null  \
+and msc.NationalProgramQualityMeasureUid='@measureID' where  \
+vf.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and vf.inactive=0
+
+
+PracticeAllProvidersPopUpCountR=select count(distinct serviceprovideruid ) as totalcount  from [FIGMDHQIManagement].[dbo].Viewserviceprovider vf \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary  msc on vf.ServiceProviderUid=msc.Provideruid \
+and msc.QuarterName='@quartermonth' and flag='@flag' and msc.provideruid is not null and locationuid is  null \
+and msc.NationalProgramQualityMeasureUid='@measureID' \
+left join dbo.FIGUserAuthorization fa on fa.ObjectUid = vf.ServiceProviderUid \
+and type in ('1','3') and OBJECtname = 'provider' \
+AND fa.figuseruid IN(SELECT figuseruid FROM figuser WHERE loginname = '@loginuser') \
+where  vf.PracticeUid IN (select PracticeUid from Figuser f \
+inner join individual i on f.Figuseruid = i.individualuid where loginname ='@loginuser') and vf.inactive=0 
+
+
+PracticeAllProvidersPopUpCountNR=select count(distinct serviceprovideruid ) as totalcount  from [FIGMDHQIManagement].[dbo].Viewserviceprovider vf \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary  msc on vf.ServiceProviderUid=msc.Provideruid \
+and msc.QuarterName='@quartermonth' and flag='@flag' and msc.provideruid is not null and locationuid is  null \
+and msc.NationalProgramQualityMeasureUid='@measureID' \
+left join dbo.FIGUserAuthorization fa on fa.ObjectUid = vf.ServiceProviderUid \
+and type in ('1','3') and OBJECtname = 'provider' \
+AND fa.figuseruid IN(SELECT figuseruid FROM figuser WHERE loginname = '@loginuser') \
+where  vf.PracticeUid IN (select PracticeUid from Figuser f \
+inner join individual i on f.Figuseruid = i.individualuid where loginname ='@loginuser') and vf.inactive=0 
+
+
+LocationBubbleCountNR=Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility where \
+servicelocationuid in ( \
+select distinct ServiceLocationUid \
+from [FIGMDWeb].[dbo].viewservicelocation vsl \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary vmcs on vsl.PracticeUid=vmcs.PracticeUid \
+where vmcs.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and QuarterName='@quartermonth' and flag='@flag' \
+and locationuid is  not null and provideruid is  null )
+
+
+LocationBubbleCountR=Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility where \
+servicelocationuid in ( \
+select distinct ServiceLocationUid \
+from [FIGMDWeb].[dbo].viewservicelocation vsl \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary vmcs on vsl.PracticeUid=vmcs.PracticeUid \
+where vmcs.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and QuarterName='@quartermonth' and flag='@flag' \
+and locationuid is  not null and provideruid is  null )
+
+
+LocationCountNR=Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility where \
+servicelocationuid in ( \
+select distinct ServiceLocationUid \
+from [FIGMDWeb].[dbo].viewservicelocation vsl \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary vmcs on vsl.PracticeUid=vmcs.PracticeUid \
+where vmcs.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and QuarterName='@quartermonth' and flag='@flag' \
+and locationuid is  not null and provideruid is  null )
+
+
+LocationCountR=Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility where \
+servicelocationuid in ( \
+select distinct ServiceLocationUid \
+from [FIGMDWeb].[dbo].viewservicelocation vsl \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary vmcs on vsl.PracticeUid=vmcs.PracticeUid \
+where vmcs.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and QuarterName='@quartermonth' and flag='@flag' \
+and locationuid is  not null and provideruid is  null )
+
+
+PracticeLocationPopUpViewR=select top 15 ServiceLocationUid,Name as LocationName, \
+isNull(Denominator,0) as Qualified, \
+isNull(Numerator,0) as Met, \
+isNull(NotMet,0) as NotMet, \
+CAST(CONVERT(DECIMAL(10,2),isnull(Average,0)*100) AS varchar)+'%' as performance, \
+'Registry Average: '+CAST(CONVERT(DECIMAL(10,2),isnull(NationalAverage,0)*100 ) AS varchar)+'%' as registryBenchmark \
+from [FIGMDHQIManagement].[dbo].ViewFacility vf \
+left join [FIGMDWeb].[dbo].ViewMeasureComputationSummary  msc \
+on vf.ServiceLocationUid=msc.locationuid and msc.QuarterName= '@quartermonth' and flag='@flag' \
+and msc.locationuid is  not null and provideruid is  null \
+and msc.NationalProgramQualityMeasureUid='@measureID' \
+where  vf.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and vf.inactive=0 \
+order by name
+
+
+
+PracticeLocationPopUpCountR=Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility where \
+servicelocationuid in ( \
+select distinct ServiceLocationUid \
+from [FIGMDWeb].[dbo].viewservicelocation vsl \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary vmcs on vsl.PracticeUid=vmcs.PracticeUid \
+where vmcs.PracticeUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and QuarterName='@quartermonth' and flag='@flag' \
+and locationuid is  not null and provideruid is  null \
+and NationalProgramQualityMeasureUid='@measureID' and inactive = '0')
+
+
+PracticeLocationPopUpCountNR=Select Count(Name) as totalcount \
+from [FIGMDHQIManagement].[dbo].ViewFacility where  \
+servicelocationuid in ( \
+select distinct ServiceLocationUid \
+from [FIGMDWeb].[dbo].viewservicelocation vsl \
+inner join [FIGMDWeb].[dbo].ViewMeasureComputationSummary vmcs on vsl.PracticeUid=vmcs.PracticeUid \
+where vmcs.PracticeUid IN (select PracticeUid from Figuser f inner join individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') \
+and QuarterName='@quartermonth' and flag='@flag' \
+and locationuid is  not null and provideruid is  null \
+and NationalProgramQualityMeasureUid='@measureID' and inactive = '0')
+
+
+PracticePatientDrillDownCountR=select COUNT(MRN)as totalcount \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients where PatientUid in ( select PatientUid  \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationPracticeRollingQuarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i  \
+on f.Figuseruid = i.individualuid  \
+where loginname ='@loginuser') \
+AND M.MeasureUid='@measureid' \
+AND M.Notmet='0' \
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))
+
+
+PracticePatientDrillDownCountNR= select COUNT(MRN)as totalcount \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients where PatientUid in ( select PatientUid  \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationPracticeQuarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i  \
+on f.Figuseruid = i.individualuid  \
+where loginname ='@loginuser') \
+AND M.MeasureUid='@measureid' \
+AND M.Notmet='0' \
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))
+
+Dashboard >> Provider
+
+ProviderCountRNR= select COUNT(distinct v.name) as totalcount \
+from [FIGMDHQIManagement].[dbo].Viewserviceprovider v inner join \
+[FIGMDWeb].[dbo].ViewMeasureComputationSummary  msc on msc.PracticeUid in \
+(Select PracticeUid from [FIGMDHQIManagement].[dbo].Individual where IndividualUid = (select FIGUserUid from [FIGMDHQIManagement].[dbo].FIGUser where LoginName='@loginuser')) and Type = '1' and Inactive='0' \
+and msc.ProviderUid = v.ServiceProviderUid and msc.QuarterName ='@quartermonth' and msc.Flag='@flag'
+
+ProviderMeasureComputationSummaryViewR= select top 4 QuarterName as Quarter,Denominator as Allmeasures,Numerator as Met,NotMet, \
+CAST(CONVERT(DECIMAL(10,2),Average*100) AS varchar)+' %' as Score from [FIGMDWeb].[dbo].ViewMeasureComputationSummary \
+where PracticeUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+and flag='@flag' \
+and ProviderUid='@provideruid' \
+and NationalProgramQualityMeasureUid='@measureuid'\
+and QuarterName <='@quartermonth'\
+and locationuid is  null and providername is not null order by QuarterName desc
+
+ProviderMeasureComputationSummaryViewNR= select top 4 QuarterName as Quarter,Denominator as Allmeasures,Numerator as Met,NotMet, \
+CAST(CONVERT(DECIMAL(10,2),Average*100) AS varchar)+' %' as Score from [FIGMDWeb].[dbo].ViewMeasureComputationSummary \
+where PracticeUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+and flag='@flag' \
+and ProviderUid='@provideruid' \
+and NationalProgramQualityMeasureUid='@measureuid'\
+and QuarterName <='@quartermonth'\
+and locationuid is  null and providername is not null order by QuarterName desc
+
+ProviderMeasureViewRNR= select distinct (DisplayName + '' +MeasureId) as ID, Replace(ShortDescription,' ','') as Measure, \
+CAST(CONVERT(DECIMAL(10,2),Average*100) AS varchar)+'%' as Performance,\
+'RegistryAverage:'+CAST(CONVERT(DECIMAL(10,2),NationalAverage*100 ) AS varchar)+'%' as RegistryAverage, ListOrder \
+from [FIGMDWeb].[dbo].[ViewMeasureComputationSummary] \
+where PracticeUid IN (select PracticeUid from [FIGMDHQIManagement].dbo.FIGUser f inner join [FIGMDHQIManagement].dbo.Individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser') and QuarterName='@quartermonth' and Flag = '@flag' and ProviderUid ='@provideruid' and LocationUid is null and MeasureType='0'\
+order by ListOrder 
+
+ProviderPatientDrillDownCountR=select COUNT(MRN)as totalcount \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderrollingquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid  \
+where loginname ='@loginuser') \
+AND M.MeasureUid='@measureuid' \
+AND M.ProviderUid ='@provideruid' and M.Notmet='0' \
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))
+
+ProviderPatientDrillDownCountNR= select COUNT(MRN)as totalcount \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid  \
+where loginname ='@loginuser') \
+AND M.MeasureUid='@measureuid' AND M.ProviderUid ='@provideruid' and M.Notmet='0' AND M.quarterEndDate \
+= (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))
+
+ProviderPatientDrillDownSortR= select top 15 W.Name, W.MRN,W.Gender,REPLACE(W.DOB,'/','-') as DOB \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients W where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderrollingquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+AND M.MeasureUid='@measureuid' \
+AND M.ProviderUid ='@provideruid' and M.Notmet='0'\
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))\
+order by  \
+CASE '@sort' \
+WHEN 'MRN' THEN W.MRN \
+WHEN 'Name' THEN W.Name \
+WHEN 'Gender' THEN W.Gender \
+WHEN 'DOB' THEN W.DOB  \
+END
+
+ProviderPatientDrillDownSortNR= select top 15 W.Name, W.MRN,W.Gender,REPLACE(W.DOB,'/','-') as DOB \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients W where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+AND M.MeasureUid='@measureuid' \
+AND M.ProviderUid ='@provideruid' and M.Notmet='0'\
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))\
+order by  \
+CASE '@sort' \
+WHEN 'MRN' THEN W.MRN \
+WHEN 'Name' THEN W.Name \
+WHEN 'Gender' THEN W.Gender \
+WHEN 'DOB' THEN W.DOB  \
+END
+
+ProviderPatientDrillDownViewR1 = select top 15 W.Name, W.MRN,W.Gender,REPLACE(W.DOB,'/','-') as DOB \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients W where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderrollingquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+AND M.MeasureUid='@measureuid' AND M.ProviderUid ='@provideruid' and M.Notmet='0'\
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth')) order by W.Name 
+
+
+ProviderPatientDrillDownViewNR1 = select top 15 W.Name, W.MRN,W.Gender,REPLACE(W.DOB,'/','-') as DOB \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients W where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+AND M.MeasureUid='@measureuid' AND M.ProviderUid ='@provideruid' and M.Notmet='0'\
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth')) order by W.Name 
+
+
+ProviderPatientDrillDownPaginationR= DECLARE  @RowspPage AS INT \
+SET @RowspPage = 15 \
+SELECT * FROM ( \
+select  W.Name, W.MRN, W.Gender, REPLACE(W.DOB,'/','-') as DOB, ROW_NUMBER() OVER(order by name) AS Rownumber \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients W where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderrollingquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+AND M.MeasureUid='@measureuid' AND M.ProviderUid ='@provideruid' and M.Notmet='0'\
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))) AS TBL \
+WHERE Rownumber BETWEEN ((@pagenumber - 1) * @RowspPage + 1) AND (@pagenumber * @RowspPage)
+
+
+ProviderPatientDrillDownPaginationNR= DECLARE  @RowspPage AS INT \
+SET @RowspPage = 15 \
+SELECT * FROM ( \
+select  W.Name, W.MRN, W.Gender, REPLACE(W.DOB,'/','-') as DOB, ROW_NUMBER() OVER(order by name) AS Rownumber \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients W where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+AND M.MeasureUid='@measureuid' AND M.ProviderUid ='@provideruid' and M.Notmet='0'\
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))) AS TBL \
+WHERE Rownumber BETWEEN ((@pagenumber - 1) * @RowspPage + 1) AND (@pagenumber * @RowspPage)
+
+ProviderPatientDrillDownPaginationR= DECLARE  @RowspPage AS INT \
+SET @RowspPage = 15 \
+SELECT * FROM ( \
+select  W.Name, W.MRN, W.Gender, REPLACE(W.DOB,'/','-') as DOB, ROW_NUMBER() OVER(order by name) AS Rownumber \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].webpatients W where PatientUid in ( select PatientUid \
+from [10.20.201.188].[FIGMDWebPartition_2017_79].[dbo].MeasureComputationProviderrollingquarterly M \
+where practiceUid IN (select PracticeUid from FIGMDHQIManagement.dbo.Figuser f inner join FIGMDHQIManagement.dbo.individual i \
+on f.Figuseruid = i.individualuid \
+where loginname ='@loginuser')\
+AND M.MeasureUid='@measureuid' AND M.ProviderUid ='@provideruid' and M.Notmet='0'\
+and M.quarterEndDate = (select distinct QuarterEndDate from [FIGMDWeb].[dbo].ViewMeasureComputationSummary where QuarterName='@quartermonth'))) AS TBL \
+WHERE Rownumber BETWEEN ((@pagenumber - 1) * @RowspPage + 1) AND (@pagenumber * @RowspPage)
+
